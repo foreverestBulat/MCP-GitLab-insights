@@ -1,6 +1,5 @@
 # MCP-GitLab-insights
 An MCP (Model Context Protocol) server that transforms your GitLab instance into an intelligent analytics dashboard accessible through natural language. Ask Claude or any MCP-enabled AI about your project's health, CI/CD status, and contributor activity.
-MCP-server for monitoring and analyzing DevOps ecosystem metrics
 
 ## 🚀 Features
 *   **Project Analytics**: Get instant overviews of any project's activity, including star count, open issues, and fork statistics.
