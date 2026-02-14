@@ -1,0 +1,25 @@
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    restart: always
+    hostname: 'localhost'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost'
+        # Отключаем HTTPS и LetsEncrypt для локального использования
+        letsencrypt['enable'] = false
+        nginx['redirect_http_to_https'] = false
+        gitlab_rails['gitlab_shell_ssh_port'] = 22
+        # gitlab_rails['import_sources'] = ['github', 'bitbucket', 'gitlab', 'gitea', 'manifest', 'git', 'gitlab_project', 'bitbucket_server']
+        # gitlab_rails['gitlab_import_enabled'] = true
+        # gitlab_rails['import_repository_download_timeout'] = 300
+    ports:
+      - '80:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - './gitlab-data/config:/etc/gitlab'
+      - './gitlab-data/logs:/var/log/gitlab'
+      - './gitlab-data/data:/var/opt/gitlab'
+    shm_size: '256m'

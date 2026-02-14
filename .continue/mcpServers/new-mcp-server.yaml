@@ -1,0 +1,9 @@
+name: Weather MCP
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: Weather MCP server
+    command: D:\repos\MCP-GitLab-insights\venv\Scripts\python.exe
+    args:
+      - D:\repos\MCP-GitLab-insights\temp\weather.py
+    env: {}
